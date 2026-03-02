@@ -65,6 +65,21 @@ Reference:
 - `references/memory_container_registry.yaml`
 - `references/evolution_log_sources.yaml`
 
+## Effect receipts (verification layer)
+
+Record measurable outcomes after each shared capability run:
+
+- Append receipt: `scripts/effect_receipt_append.sh`
+- Build scoreboard: `scripts/effect_receipt_scoreboard.sh`
+- Schema: `references/effect_receipt_schema.json`
+
+Minimum metrics:
+- time_saved_min
+- repeat_avoided
+- outcome (success/partial/fail)
+
+Use receipts to prioritize high-impact capabilities and avoid repeating low-yield paths.
+
 ## Guardrails
 
 - Prefer incremental processing, avoid full-history scans unless requested
