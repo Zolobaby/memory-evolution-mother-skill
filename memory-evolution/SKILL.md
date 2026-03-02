@@ -86,6 +86,18 @@ Minimum metrics:
 
 Use receipts to prioritize high-impact capabilities and avoid repeating low-yield paths.
 
+## High-value asset retention
+
+Use registry-driven retention to preserve long-term value:
+
+- Registry: `references/high_value_asset_registry.json`
+- Curate report: `scripts/high_value_curate.sh`
+
+Policy:
+- P0 keep always
+- P1 keep by default
+- P2 archive if low usage
+
 ## Guardrails
 
 - Prefer incremental processing, avoid full-history scans unless requested

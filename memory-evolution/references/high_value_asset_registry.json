@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "updated_at": "2026-03-03T01:56:00+08:00",
+  "purpose": "Keep only high-value, reusable evolution assets.",
+  "classes": {
+    "P0": {
+      "meaning": "Core runtime-critical assets (must keep)",
+      "assets": [
+        "memory-evolution/SKILL.md",
+        "memory-evolution/scripts/memory_triad_guard.sh",
+        "memory-evolution/scripts/evolution_log_append.sh",
+        "memory-evolution/scripts/evolution_chain_build.sh",
+        "memory-evolution/scripts/effect_receipt_append.sh",
+        "memory-evolution/references/memory_container_registry.yaml",
+        "memory-evolution/references/effect_receipt_schema.json"
+      ]
+    },
+    "P1": {
+      "meaning": "Important but replaceable assets (keep by default)",
+      "assets": [
+        "memory-evolution/scripts/effect_receipt_scoreboard.sh",
+        "memory-evolution/scripts/evolution_log_daily_digest.sh",
+        "memory-evolution/scripts/capability_probe.sh",
+        "memory-evolution/references/evolution_log_sources.yaml",
+        "README.md",
+        "README_CN_PUBLIC.md"
+      ]
+    },
+    "P2": {
+      "meaning": "Optional/experimental assets (archive if low usage)",
+      "assets": []
+    }
+  },
+  "retention_rules": [
+    "keep_all:P0",
+    "keep_default:P1",
+    "archive_if_unused_14d:P2",
+    "never_delete_without_backup:true"
+  ]
+}
