@@ -1,15 +1,21 @@
 ---
 name: memory-evolution
-description: Coordinate and evolve a three-layer memory stack (L1 local anchors, L2 Memos API, L3 JSONL distill/LanceDB). Use when optimizing memory flow, reducing repeated learning, chaining similar evolution events, adding new memory containers, or running cross-layer health checks and migration cutovers.
+description: Coordinate and evolve a three-layer memory stack (L1 local anchors, L2 Memos API, L3 JSONL distill/LanceDB). 用于优化记忆流、减少重复学习、串联相近进化事件、接入新记忆容器，并执行跨层健康检查与迁移切换。
 ---
 
 # Memory Evolution (Mother Skill)
 
-Use one integrated architecture:
+A compact evolution kernel for agents: **capture → chain → verify → upgrade**.
 
-- Capability: reusable decision patterns and routing rules
-- Tool: deterministic scripts for checks/logging/chaining
-- Skill: trigger policy for when to use capability + tool
+## 中文简介
+
+这是一个“进化母 Skill”，把分散的经验变成可复用能力：
+
+- 能力层（Capability）：沉淀稳定策略与路由规则
+- 工具层（Tool）：用脚本保证可重复、可审计执行
+- 技能层（Skill）：定义触发条件与编排策略
+
+目标不是做一次任务，而是减少重复学习、提升进化效率。
 
 ## Core workflow
 
