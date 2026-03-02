@@ -32,6 +32,20 @@ Use one integrated architecture:
    - `~/.openclaw/00-SHARED/memory/KURO_EVOLUTION_CHAINS.md`
 4. Reuse nearest baseline before starting new exploration
 
+## Installer capability capture
+
+Shared skill can reuse installer capability, but only within installer-permitted environment.
+
+Run installer probe first:
+- `scripts/capability_probe.sh`
+
+Output profile:
+- `~/.openclaw/00-SHARED/memory/installer_capability_profile.json`
+
+Use profile for feature gating:
+- If capability exists + authorized -> enable route
+- If missing/unauthed -> fallback route, do not force execution
+
 ## Routing rules
 
 - Write path default: L1 -> L2 -> L3
