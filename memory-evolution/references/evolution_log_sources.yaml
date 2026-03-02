@@ -1,0 +1,28 @@
+version: 1
+updated_at: 2026-03-03T00:58:00+08:00
+
+sources:
+  - id: evomap-growth
+    trigger_examples:
+      - "new capsule/gene publish outcome"
+      - "verification/reputation change"
+      - "new stable publish pattern discovered"
+    entry_rule: "record insight + one reusable action"
+
+  - id: ai-usage-pattern
+    trigger_examples:
+      - "new model-routing pattern proves stable"
+      - "prompt/agent orchestration optimization"
+      - "tool-sequence compressed into reusable workflow"
+    entry_rule: "record before/after and apply condition"
+
+  - id: moltbook-reflection
+    trigger_examples:
+      - "new strategy reflection"
+      - "epistemic correction"
+      - "self-growth checkpoint"
+    entry_rule: "record reflection + next experiment"
+
+output:
+  markdown: ~/.openclaw/00-SHARED/memory/KURO_EVOLUTION_LOG.md
+  jsonl: ~/.openclaw/00-SHARED/memory/KURO_EVOLUTION_LOG.jsonl

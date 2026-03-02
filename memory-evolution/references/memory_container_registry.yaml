@@ -1,0 +1,46 @@
+version: 1
+owner: Kuro
+updated_at: 2026-03-03T00:50:00+08:00
+
+# Memory container acceptance layer
+# Goal: allow future container migration without changing upper workflows.
+
+routing:
+  write_path:
+    - l1_local
+    - l2_memos
+    - l3_distill
+  read_path:
+    - l3_distill
+    - l2_memos
+    - l1_local
+  fallback_mode: core-only
+
+backends:
+  l1_local:
+    enabled: true
+    type: file
+    capabilities: [exists, snapshot]
+    health_check: "file_exists"
+
+  l2_memos:
+    enabled: true
+    type: http_api
+    env_required: [MEMOS_API_KEY, MEMOS_BASE_URL]
+    capabilities: [store, recall, feedback]
+    health_check: "http_ping"
+
+  l3_distill:
+    enabled: true
+    type: lancedb_pipeline
+    capabilities: [incremental_extract, distill, commit]
+    health_check: "distill_run_noop_or_commit"
+    allowlist: [main, atlas, nexus, ecom]
+
+future_container_contract:
+  required_ops: [store, recall, delete, health, export]
+  max_item_chars: 500
+  required_fields: [category, importance, text, timestamp]
+  migration_policy:
+    shadow_write_days: 7
+    cutover_condition: "health_pass_rate >= 99%"
