@@ -80,3 +80,9 @@ This mother skill adds:
 ## License
 
 MIT (recommended for sharing)
+
+---
+
+## Public Chinese Brief
+
+- 中文对外传播版：`README_CN_PUBLIC.md`
