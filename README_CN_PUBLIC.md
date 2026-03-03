@@ -1,4 +1,4 @@
-# 🧬 Memory Evolution 母 Skill（对外传播版）
+# 🧬 Memory Evolution 母 Skill
 
 > 把一次次“会做事”，升级为可验证、可复用、可持续进化的能力系统。
 
